@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Qhgj6NiH+iE=",
+  "success": true,
+  "projectFilePath": "D:\\ITI\\Projects\\HotelReservation\\HotelReservation.Api\\HotelReservation.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kamel\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.3\\microsoft.aspnetcore.openapi.9.0.3.nupkg.sha512",
+    "C:\\Users\\kamel\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
