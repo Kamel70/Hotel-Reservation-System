@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "HotelReservation.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/HotelReservation.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelReservation.Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "HotelReservation.Core/1.0.0": {
+      "type": "project",
+      "path": "../HotelReservation.Core/HotelReservation.Core.csproj",
+      "msbuildProject": "../HotelReservation.Core/HotelReservation.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "HotelReservation.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\kamel\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\ITI\\Projects\\HotelReservation\\HotelReservation.Core\\HotelReservation.Core.csproj": {
+              "projectPath": "D:\\ITI\\Projects\\HotelReservation\\HotelReservation.Core\\HotelReservation.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
