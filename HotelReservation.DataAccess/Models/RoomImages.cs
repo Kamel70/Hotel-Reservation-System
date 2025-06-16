@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
 
 namespace HotelReservation.DataAccess.Models
 {
-    public class ApplicationUser:IdentityUser
+    public class RoomImages
     {
-
+        public int Id { get; set; }
+        public string ImageUrl { get; set; }
+        public string Caption { get; set; }
     }
 }
