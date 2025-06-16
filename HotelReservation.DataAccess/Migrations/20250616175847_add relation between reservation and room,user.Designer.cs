@@ -4,6 +4,7 @@ using HotelReservation.DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelReservation.DataAccess.Migrations
 {
     [DbContext(typeof(HotelReservationDBContext))]
-    partial class HotelReservationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250616175847_add relation between reservation and room,user")]
+    partial class addrelationbetweenreservationandroomuser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -142,17 +145,11 @@ namespace HotelReservation.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ReservationId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ReservationId")
-                        .IsUnique();
 
                     b.ToTable("Payment");
                 });
@@ -251,12 +248,7 @@ namespace HotelReservation.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoomId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("RoomId");
 
                     b.ToTable("RoomImages");
                 });
@@ -394,17 +386,6 @@ namespace HotelReservation.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("HotelReservation.DataAccess.Models.Payment", b =>
-                {
-                    b.HasOne("HotelReservation.DataAccess.Models.Reservation", "Reservation")
-                        .WithOne("Payment")
-                        .HasForeignKey("HotelReservation.DataAccess.Models.Payment", "ReservationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Reservation");
-                });
-
             modelBuilder.Entity("HotelReservation.DataAccess.Models.Reservation", b =>
                 {
                     b.HasOne("HotelReservation.DataAccess.Models.Room", "Room")
@@ -433,17 +414,6 @@ namespace HotelReservation.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Hotel");
-                });
-
-            modelBuilder.Entity("HotelReservation.DataAccess.Models.RoomImages", b =>
-                {
-                    b.HasOne("HotelReservation.DataAccess.Models.Room", "Room")
-                        .WithMany("RoomImages")
-                        .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -507,17 +477,9 @@ namespace HotelReservation.DataAccess.Migrations
                     b.Navigation("Rooms");
                 });
 
-            modelBuilder.Entity("HotelReservation.DataAccess.Models.Reservation", b =>
-                {
-                    b.Navigation("Payment")
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("HotelReservation.DataAccess.Models.Room", b =>
                 {
                     b.Navigation("Reservations");
-
-                    b.Navigation("RoomImages");
                 });
 #pragma warning restore 612, 618
         }

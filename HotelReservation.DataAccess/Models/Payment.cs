@@ -13,5 +13,8 @@ namespace HotelReservation.DataAccess.Models
         public DateTime PaymentDate { get; set; }
         public string PaymentMethod { get; set; }
         public string Status { get; set; }
+
+        public int ReservationId { get; set; }
+        public Reservation Reservation { get; set; }
     }
 }

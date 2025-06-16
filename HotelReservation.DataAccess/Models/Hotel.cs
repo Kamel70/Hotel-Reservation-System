@@ -17,5 +17,12 @@ namespace HotelReservation.DataAccess.Models
         public string County { get; set; }
         public string phonenumber { get; set; }
         public string Email { get; set; }
+
+        public ICollection<Room> Rooms { get; set; }
+
+        public Hotel()
+        {
+            Rooms = new HashSet<Room>();
+        }
     }
 }

@@ -15,5 +15,14 @@ namespace HotelReservation.DataAccess.Models
         public int Beds { get; set; }
         public decimal PricePerNight { get; set; }
         public bool IsAvailable { get; set; }
+        public int HotelId { get; set; }
+        public Hotel Hotel { get; set; }
+        public ICollection<Reservation> Reservations { get; set; }
+        public ICollection<RoomImages> RoomImages { get; set; }
+        public Room()
+        {
+            Reservations = new HashSet<Reservation>();
+            RoomImages = new HashSet<RoomImages>();
+        }
     }
 }
