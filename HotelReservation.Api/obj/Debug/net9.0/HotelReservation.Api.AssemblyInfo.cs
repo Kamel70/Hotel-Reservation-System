@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HotelReservation.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9767d782187a14a2007a72e60ca053159d4c8678")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+050364b70fe39cdf6b34335e0f29718bfa4de09f")]
 [assembly: System.Reflection.AssemblyProductAttribute("HotelReservation.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HotelReservation.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
